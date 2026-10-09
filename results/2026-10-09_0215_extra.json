@@ -1,0 +1,344 @@
+[
+  {
+    "model": "qwen3.6:35b-a3b",
+    "think": false,
+    "load_s": 17.2,
+    "size_gb": 22.5,
+    "gpu_pct": 59,
+    "gen_tps": 79.9,
+    "prompt_tps": 1476,
+    "score": 18,
+    "total": 20,
+    "task_seconds": 94.0,
+    "tasks": {
+      "de_prozent_fahrrad": {
+        "pass": true,
+        "seconds": 5.8,
+        "output": "Um den Endpreis des Fahrrads zu berechnen, gehen wir schrittweise vor.\n\n1.  **Preiserhöhung um 15 %:**\n    Der ursprüngliche Preis beträgt 840 €.\n    Die Erhöhung beträgt: $840 \\times 0{,}15 = 126$ €\n    Der neue Preis nach der Erhöhung ist: $840 + 126 = 966$ €\n\n2.  **Preissenkung um 15 %:**\n    Nun wird der *neue* Preis von 966 € um 15 % gesenkt.\n    Die Senkung beträgt: $966 \\times 0{,}15 = 144{,}9$ €\n    Der Endpreis ist: $966 - 144{,}9 = 821{,}1$ €\n\nAlternativ kann man dies auch mit einem Faktor berechnen:\n$\\text{Endpreis} = 840 \\times (1 + 0{,}15) \\times (1 - 0{,}15)$\n$\\text{Endpreis} = 840 \\times 1{,}15 \\times 0{,}85$\n$\\text{Endpreis} = 840 \\times 0{,}9775$\n$\\text{Endpreis} = 821{,}1$ €\n\nDa zwei Nachkommastellen gefordert sind, schreiben wir das Ergebnis als 821,10.\n\nANTWORT: 821,10"
+      },
+      "de_zinseszins": {
+        "pass": true,
+        "seconds": 5.5,
+        "output": "Um den Endbetrag bei Zinseszins zu berechnen, verwenden wir die Formel:\n\n$$ K_n = K_0 \\cdot (1 + p)^n $$\n\nDabei ist:\n*   $K_n$ der Kapitalwert nach $n$ Jahren\n*   $K_0$ das Anfangskapital ($2.000 \\, €$)\n*   $p$ der Zinssatz pro Jahr ($3 \\% = 0,03$)\n*   $n$ die Anzahl der Jahre ($4$)\n\nEinsetzen der Werte:\n\n$$ K_4 = 2.000 \\cdot (1 + 0,03)^4 $$\n$$ K_4 = 2.000 \\cdot (1,03)^4 $$\n\nBerechnung von $(1,03)^4$:\n$$ 1,03^4 \\approx 1,12550881 $$\n\nMultiplikation mit dem Anfangskapital:\n$$ K_4 = 2.000 \\cdot 1,12550881 \\approx 2.251,01762 \\, € $$\n\nRundung auf zwei Nachkommastellen:\nDa die dritte Dezimalstelle eine $7$ ist, runden wir auf:\n$$ 2.251,02 \\, € $$\n\nANTWORT: 2251,02"
+      },
+      "en_pipes": {
+        "pass": true,
+        "seconds": 9.2,
+        "output": "C:** Empties the tank in 12 hours. Since it empties the tank, its rate is negative relative to filling.\n    Rate of C = $-\\frac{1}{12}$ of the tank per hour.\n\n**Step 2: Calculate the combined net rate.**\n\nWhen all three are open, the net rate ($R_{net}$) is the sum of their individual rates:\n\n$$ R_{net} = \\text{Rate of A} + \\text{Rate of B} + \\text{Rate of C} $$\n$$ R_{net} = \\frac{1}{6} + \\frac{1}{4} - \\frac{1}{12} $$\n\nTo add these fractions, find the least common multiple (LCM) of the denominators 6, 4, and 12. The LCM is 12.\n\nConvert each fraction:\n*   $\\frac{1}{6} = \\frac{2}{12}$\n*   $\\frac{1}{4} = \\frac{3}{12}$\n*   $\\frac{1}{12} = \\frac{1}{12}$\n\nNow, substitute these back into the equation:\n\n$$ R_{net} = \\frac{2}{12} + \\frac{3}{12} - \\frac{1}{12} $$\n$$ R_{net} = \\frac{2 + 3 - 1}{12} $$\n$$ R_{net} = \\frac{4}{12} $$\n\nSimplify the fraction:\n$$ R_{net} = \\frac{1}{3} \\text{ of the tank per hour} $$\n\n**Step 3: Calculate the time required to fill the tank.**\n\nThe time ($T$) required to fill one full tank is the reciprocal of the net rate:\n\n$$ T = \\frac{1}{R_{net}} $$\n$$ T = \\frac{1}{\\frac{1}{3}} $$\n$$ T = 3 \\text{ hours} $$\n\n**Verification:**\n*   In 3 hours, Pipe A fills $\\frac{3}{6} = \\frac{1}{2}$ of the tank.\n*   In 3 hours, Pipe B fills $\\frac{3}{4}$ of the tank.\n*   In 3 hours, Drain C empties $\\frac{3}{12} = \\frac{1}{4}$ of the tank.\n*   Total filled = $\\frac{1}{2} + \\frac{3}{4} - \\frac{1}{4} = \\frac{2}{4} + \\frac{3}{4} - \\frac{1}{4} = \\frac{4}{4} = 1$ full tank.\n\nANSWER: 3"
+      },
+      "de_wochentag": {
+        "pass": true,
+        "seconds": 10.2,
+        "output": " Differenz berechnen).\n        *   Tage im März nach dem 1.: $31 - 1 = 30$ Tage.\n    *   **April:** 30 Tage\n    *   **Mai:** 31 Tage\n    *   **Juni:** 30 Tage\n    *   **Juli:** 31 Tage\n    *   **August:** 31 Tage\n    *   **September:** 30 Tage\n    *   **Oktober:** 31 Tage\n    *   **November:** 30 Tage\n    *   **Dezember:** Bis zum 24. Dezember sind es 24 Tage (inklusive des 24.).\n\n    Summe der Tage vom 1. März bis zum 24. Dezember (exklusiv des Starttages, also die Verschiebung):\n    \n    $$30 \\text{ (März)} + 30 \\text{ (Apr)} + 31 \\text{ (Mai)} + 30 \\text{ (Jun)} + 31 \\text{ (Jul)} + 31 \\text{ (Aug)} + 30 \\text{ (Sep)} + 31 \\text{ (Okt)} + 30 \\text{ (Nov)} + 24 \\text{ (Dez)}$$\n\n    Berechnung:\n    $$30 + 30 = 60$$\n    $$60 + 31 = 91$$\n    $$91 + 30 = 121$$\n    $$121 + 31 = 152$$\n    $$152 + 31 = 183$$\n    $$183 + 30 = 213$$\n    $$213 + 31 = 244$$\n    $$244 + 30 = 274$$\n    $$274 + 24 = 298$$\n\n    Es liegen also **298 Tage** nach dem 1. März.\n\n4.  **Berechnung des Wochentags:**\n    Wir teilen die Anzahl der Tage durch 7, um den Rest zu finden (da sich der Wochentag alle 7 Tage wiederholt).\n\n    $$298 \\div 7 = 42 \\text{ Rest } 4$$\n    \n    ($42 \\times 7 = 294$, und $298 - 294 = 4$)\n\n    Das bedeutet, der 24. Dezember liegt 4 Tage nach einem Sonntag.\n\n5.  **Abzählen:**\n    *   Sonntag + 1 Tag = Montag\n    *   Sonntag + 2 Tage = Dienstag\n    *   Sonntag + 3 Tage = Mittwoch\n    *   Sonntag + 4 Tage = Donnerstag\n\nDer 24. Dezember 2026 ist also ein Donnerstag.\n\nANTWORT: Donnerstag"
+      },
+      "de_runder_tisch": {
+        "pass": true,
+        "seconds": 10.9,
+        "output": "t $(7 - 1)! = 6!$.\n\n$$ \\text{Anordnungen des Blocks} = 6! = 720 $$\n\nDa Anna und Ben innerhalb ihres Blocks in 2 verschiedenen Reihenfolgen sitzen können, multiplizieren wir mit 2:\n\n$$ \\text{Anzahl ungültiger Anordnungen (Anna und Ben nebeneinander)} = 2 \\times 6! = 2 \\times 720 = 1440 $$\n\n**Schritt 3: Berechnung der gültigen Anordnungen**\n\nDie Anzahl der gültigen Anordnungen, bei denen Anna und Ben *nicht* nebeneinander sitzen, erhält man, indem man die ungültigen Anordnungen von der Gesamtanzahl abzieht.\n\n$$ \\text{Gültige Anordnungen} = \\text{Gesamtanzahl} - \\text{Ungültige Anordnungen} $$\n$$ \\text{Gültige Anordnungen} = 5040 - 1440 $$\n\nBerechnung:\n$$ 5040 - 1440 = 3600 $$\n\n**Alternative Methode (direkte Konstruktion):**\n\n1. Setze Anna an einen festen Platz (da Drehungen gleich sind, fixieren wir eine Person, um die Symmetrie aufzulösen). Es gibt 1 Möglichkeit für Anna.\n2. Ben darf nicht links oder rechts von Anna sitzen. Bei 8 Plätzen hat Anna 2 Nachbarn. Die verbleibenden Plätze für Ben sind also $8 - 1 (\\text{Anna}) - 2 (\\text{Nachbarn}) = 5$ Möglichkeiten für Ben.\n3. Die restlichen 6 Personen können auf die verbleibenden 6 Plätze beliebig verteilt werden. Da Anna bereits fixiert ist, zählen wir hier lineare Permutationen der restlichen Personen relativ zu Anna.\n   Anzahl der Möglichkeiten für die restlichen 6 Personen = $6!$.\n\n$$ \\text{Ergebnis} = 1 \\times 5 \\times 6! $$\n$$ 6! = 720 $$\n$$ 5 \\times 720 = 3600 $$\n\nBeide Methoden führen zum gleichen Ergebnis.\n\nANTWORT: 3600"
+      },
+      "de_luegner": {
+        "pass": true,
+        "seconds": 4.5,
+        "output": "Hier ist die schrittweise logische Herleitung:\n\n1.  **Analyse von A:**\n    Es ist gegeben, dass **A ehrlich** ist. Das bedeutet, dass alles, was A sagt, der Wahrheit entspricht.\n\n2.  **Analyse der Aussage von A:**\n    A sagt: \"B ist ein Lügner.\"\n    Da A ehrlich ist, muss diese Aussage wahr sein.\n    $\\rightarrow$ **B ist ein Lügner.**\n\n3.  **Analyse der Aussage von B:**\n    B sagt: \"A und C sind vom gleichen Typ.\"\n    Da wir wissen, dass B ein Lügner ist, muss diese Aussage falsch sein.\n    Das bedeutet, dass A und C *nicht* vom gleichen Typ sind.\n\n4.  **Bestimmung des Typs von C:**\n    Wir wissen bereits, dass A ehrlich ist.\n    Da A und C nicht vom gleichen Typ sind, muss C der andere Typ sein.\n    $\\rightarrow$ **C ist ein Lügner.**\n\nANTWORT: C ist ein Lügner"
+      },
+      "de_buchstaben_r": {
+        "pass": false,
+        "seconds": 4.2,
+        "output": "Um die Anzahl des Buchstabens 'r' im Wort \"Strohhalmverkäuferin\" zu bestimmen, schauen wir uns die Schreibweise genau an:\n\nS-t-**o**-**h**-**l**-m-v-e-**r**-k-**ä**-u-f-e-**r**-i-n\n\nHier sind die Positionen der Buchstaben:\n1. S\n2. t\n3. o\n4. h\n5. l\n6. m\n7. v\n8. e\n9. **r** (erster 'r')\n10. k\n11. ä\n12. u\n13. f\n14. e\n15. **r** (zweiter 'r')\n16. i\n17. n\n\nDer Buchstabe 'r' kommt also 2-mal vor.\n\nANTWORT: 2"
+      },
+      "de_rueckwaerts": {
+        "pass": false,
+        "seconds": 3.9,
+        "output": "Um das Wort 'Donaudampfschiff' rückwärts zu schreiben, lesen wir die Buchstaben von hinten nach vorne:\n\n1.  f\n2.  f\n3.  i\n4.  h\n5.  c\n6.  s\n7.  p\n8.  m\n9.  a\n10. d\n11. n\n12. u\n13. o\n14. n\n15. D\n\nDa das Ergebnis komplett in Kleinbuchstaben sein soll, wird das große 'D' am Ende zu einem kleinen 'd'.\n\nDie rückwärts geschriebene Kette lautet also: ffihcsmpmadnuod\n\nANTWORT: ffihcsmpmadnuod"
+      },
+      "de_grammatik_dativ": {
+        "pass": true,
+        "seconds": 2.4,
+        "output": "dem Hund\n\nANTWORT: dem Hund"
+      },
+      "de_konjunktiv": {
+        "pass": true,
+        "seconds": 3.5,
+        "output": "Um den Satz \"Er sagt: 'Ich habe keine Zeit.'\" in die indirekte Rede zu überführen, muss das Zitat angepasst werden. Das Subjekt \"Ich\" wird zu \"er\", und das Verb \"hatte\" (Präsens von haben) wird im Konjunktiv I umgewandelt. Da die Form \"habe\" für die dritte Person Singular (er/sie/es) identisch mit dem Indikativ ist, bleibt sie in der Regel erhalten, um den Konjunktiv I zu kennzeichnen.\n\nANTWORT: Er sagt, er habe keine Zeit."
+      },
+      "de_rechtschreibung": {
+        "pass": true,
+        "seconds": 2.4,
+        "output": "Standart\n\nANTWORT: Standart"
+      },
+      "de_wissen_magdeburg": {
+        "pass": true,
+        "seconds": 2.6,
+        "output": "Die Landeshauptstadt des Bundeslandes Sachsen-Anhalt ist Magdeburg. Sie liegt an der Elbe und ist zugleich die größte Stadt des Landes.\n\nANTWORT: Magdeburg"
+      },
+      "en_knowledge_w": {
+        "pass": true,
+        "seconds": 2.9,
+        "output": "The chemical element with the symbol **W** is **Tungsten**.\n\nThe symbol \"W\" comes from the German word for tungsten, *Wolfram*. Tungsten is a transition metal with the atomic number 74. It is known for its extremely high melting point (the highest of all metals) and high density.\n\nANSWER: Tungsten"
+      },
+      "de_extraktion_termin": {
+        "pass": true,
+        "seconds": 3.3,
+        "output": "{\n  \"name\": \"Yılmaz\",\n  \"kennzeichen\": \"ES-AK 482\",\n  \"datum\": \"2026-11-03\",\n  \"uhrzeit\": \"08:30\",\n  \"telefon\": \"0711 123456\",\n  \"arbeiten\": [\n    \"Inspektion\",\n    \"Bremsbeläge vorne getauscht\"\n  ]\n}"
+      },
+      "code_isbn10": {
+        "pass": true,
+        "seconds": 4.3,
+        "output": "```python\ndef is_valid_isbn10(s: str) -> bool:\n    # Remove hyphens\n    cleaned = s.replace('-', '')\n    \n    # Must have exactly 10 characters\n    if len(cleaned) != 10:\n        return False\n    \n    # Check that first 9 are digits and last is digit or 'X'\n    for i in range(9):\n        if not cleaned[i].isdigit():\n            return False\n    \n    if not (cleaned[9].isdigit() or cleaned[9] == 'X'):\n        return False\n    \n    # Calculate the weighted sum\n    total = 0\n    for i in range(10):\n        if cleaned[i] == 'X':\n            digit = 10\n        else:\n            digit = int(cleaned[i])\n        total += (10 - i) * digit\n    \n    return total % 11 == 0\n```"
+      },
+      "code_spiral": {
+        "pass": true,
+        "seconds": 4.8,
+        "output": "```python\ndef spiral_order(matrix):\n    if not matrix or not matrix[0]:\n        return []\n    \n    result = []\n    top, bottom = 0, len(matrix) - 1\n    left, right = 0, len(matrix[0]) - 1\n    \n    while top <= bottom and left <= right:\n        # Traverse from left to right along the top row\n        for col in range(left, right + 1):\n            result.append(matrix[top][col])\n        top += 1\n        \n        # Traverse from top to bottom along the right column\n        for row in range(top, bottom + 1):\n            result.append(matrix[row][right])\n        right -= 1\n        \n        # Traverse from right to left along the bottom row (if still valid)\n        if top <= bottom:\n            for col in range(right, left - 1, -1):\n                result.append(matrix[bottom][col])\n            bottom -= 1\n        \n        # Traverse from bottom to top along the left column (if still valid)\n        if left <= right:\n            for row in range(bottom, top - 1, -1):\n                result.append(matrix[row][left])\n            left += 1\n    \n    return result\n```"
+      },
+      "code_bugfix": {
+        "pass": true,
+        "seconds": 3.4,
+        "output": "```python\ndef find_first(nums, target):\n    \"\"\"Return the index of the first occurrence of target in sorted nums, or -1.\"\"\"\n    lo, hi = 0, len(nums)\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if nums[mid] < target:\n            lo = mid + 1\n        else:\n            hi = mid\n    return lo if lo < len(nums) and nums[lo] == target else -1\n```"
+      },
+      "de_anweisung_liste": {
+        "pass": true,
+        "seconds": 2.5,
+        "output": "1. Apfel\n2. Banane\n3. Erdbeere\n4. Kirsche\n5. Orange"
+      },
+      "de_anweisung_json_woerter": {
+        "pass": true,
+        "seconds": 2.5,
+        "output": "[\"Blume\", \"Braun\", \"Brust\", \"Boden\"]"
+      },
+      "de_langtext_zwei_fakten": {
+        "pass": true,
+        "seconds": 5.4,
+        "output": "Um die Gesamtmenge der von Lieferant A und Lieferant B gelieferten Schrauben in 3 Wochen zu berechnen, gehen wir wie folgt vor:\n\n1.  **Wöchentliche Lieferung von Lieferant A:** 120 Schrauben.\n2.  **Wöchentliche Lieferung von Lieferant B:** 85 Schrauben.\n3.  **Gesamtwöchentliche Lieferung:** $120 + 85 = 205$ Schrauben pro Woche.\n4.  **Lieferung über 3 Wochen:** $205 \\times 3 = 615$ Schrauben.\n\nANTWORT: 615"
+      }
+    }
+  },
+  {
+    "model": "qwen3.8:27b",
+    "think": false,
+    "load_s": 13.6,
+    "size_gb": 18.2,
+    "gpu_pct": 68,
+    "gen_tps": 12.9,
+    "prompt_tps": 1038,
+    "score": 19,
+    "total": 20,
+    "task_seconds": 226.3,
+    "tasks": {
+      "de_prozent_fahrrad": {
+        "pass": true,
+        "seconds": 13.6,
+        "output": "Um den Endpreis des Fahrrads zu berechnen, gehen wir schrittweise vor:\n\n1.  **Ausgangspreis:** 840 €\n2.  **Preiserhöhung um 15 %:**\n    *   Erhöhungsbetrag: $840 \\cdot 0,15 = 126$ €\n    *   Neuer Preis: $840 + 126 = 966$ €\n    *   Alternativ: $840 \\cdot 1,15 = 966$ €\n3.  **Preissenkung um 15 % (auf den neuen Preis):**\n    *   Senkungsbetrag: $966 \\cdot 0,15 = 144,90$ €\n    *   Endpreis: $966 - 144,90 = 821,10$ €\n    *   Alternativ: $966 \\cdot 0,85 = 821,10$ €\n\nDer Endpreis beträgt also 821,10 €.\n\nANTWORT: 821,10"
+      },
+      "de_zinseszins": {
+        "pass": true,
+        "seconds": 15.8,
+        "output": "Um den Endwert der Anlage zu berechnen, verwenden wir die Formel für Zinseszins:\n\n$$ A = P \\cdot (1 + r)^t $$\n\nDabei ist:\n*   $P$ das Anfangskapital (2.000 €)\n*   $r$ der jährliche Zinssatz (3 % = 0,03)\n*   $t$ die Zeit in Jahren (4 Jahre)\n\nEinsetzen der Werte:\n\n$$ A = 2000 \\cdot (1 + 0,03)^4 $$\n$$ A = 2000 \\cdot (1,03)^4 $$\n\nZuerst berechnen wir $(1,03)^4$:\n$$ 1,03^2 = 1,0609 $$\n$$ 1,03^4 = 1,0609^2 \\approx 1,12550881 $$\n\nNun multiplizieren wir mit dem Anfangskapital:\n$$ A = 2000 \\cdot 1,12550881 $$\n$$ A = 2251,01762 $$\n\nGerundet auf zwei Nachkommastellen ergibt das 2.251,02 €.\n\nANTWORT: 2251,02"
+      },
+      "en_pipes": {
+        "pass": true,
+        "seconds": 24.2,
+        "output": "ith all three pipes open, we need to calculate the net rate of filling.\n\n**Step 1: Determine the individual rates of each pipe.**\n\n*   **Pipe A:** Fills the tank in 6 hours.\n    Rate of A = $\\frac{1}{6}$ of the tank per hour.\n*   **Pipe B:** Fills the tank in 4 hours.\n    Rate of B = $\\frac{1}{4}$ of the tank per hour.\n*   **Drain C:** Empties the tank in 12 hours.\n    Rate of C = $-\\frac{1}{12}$ of the tank per hour (negative because it removes water).\n\n**Step 2: Calculate the combined net rate.**\n\nWhen all three are open, the net rate ($R_{net}$) is the sum of the filling rates minus the draining rate:\n\n$$ R_{net} = \\text{Rate}_A + \\text{Rate}_B - \\text{Rate}_C $$\n$$ R_{net} = \\frac{1}{6} + \\frac{1}{4} - \\frac{1}{12} $$\n\nTo add these fractions, find the least common multiple (LCM) of the denominators 6, 4, and 12. The LCM is 12.\n\nConvert each fraction:\n*   $\\frac{1}{6} = \\frac{2}{12}$\n*   $\\frac{1}{4} = \\frac{3}{12}$\n*   $\\frac{1}{12} = \\frac{1}{12}$\n\nNow, substitute these back into the equation:\n\n$$ R_{net} = \\frac{2}{12} + \\frac{3}{12} - \\frac{1}{12} $$\n$$ R_{net} = \\frac{2 + 3 - 1}{12} $$\n$$ R_{net} = \\frac{4}{12} $$\n\nSimplify the fraction:\n$$ R_{net} = \\frac{1}{3} \\text{ of the tank per hour} $$\n\n**Step 3: Calculate the time required to fill the tank.**\n\nIf the tank fills at a rate of $\\frac{1}{3}$ per hour, the time ($T$) required to fill 1 full tank is the reciprocal of the rate:\n\n$$ T = \\frac{1}{R_{net}} $$\n$$ T = \\frac{1}{1/3} $$\n$$ T = 3 \\text{ hours} $$\n\nANSWER: 3"
+      },
+      "de_wochentag": {
+        "pass": true,
+        "seconds": 25.6,
+        "output": "Um den Wochentag für den 24. Dezember 2026 zu bestimmen, berechnen wir die Anzahl der Tage zwischen dem 1. März 2026 und dem 24. Dezember 2026.\n\n**Schritt 1: Tage im März 2026**\nDer März hat 31 Tage.\nDa der 1. März ein Sonntag ist, sind die restlichen Tage im März: $31 - 1 = 30$ Tage.\n\n**Schritt 2: Tage in den Monaten April bis November 2026**\n- April: 30 Tage\n- Mai: 31 Tage\n- Juni: 30 Tage\n- Juli: 31 Tage\n- August: 31 Tage\n- September: 30 Tage\n- Oktober: 31 Tage\n- November: 30 Tage\n\nSumme dieser Monate:\n$30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 = 244$ Tage.\n\n**Schritt 3: Tage im Dezember 2026**\nWir zählen bis zum 24. Dezember: 24 Tage.\n\n**Schritt 4: Gesamte Anzahl der Tage**\nGesamte Tage = (Restliche Tage im März) + (Tage April–November) + (Tage im Dezember)\nGesamte Tage = $30 + 244 + 24 = 298$ Tage.\n\n**Schritt 5: Berechnung des Wochentags**\nWir teilen die Gesamttage durch 7, um die volle Anzahl der Wochen und den Rest (die zusätzlichen Tage) zu ermitteln.\n$298 \\div 7 = 42$ Wochen mit einem Rest von $4$ Tagen.\n($42 \\times 7 = 294$; $298 - 294 = 4$)\n\nDas bedeutet, der 24. Dezember 2026 ist 4 Tage nach einem Sonntag.\n\n- Sonntag + 1 Tag = Montag\n- Sonntag + 2 Tage = Dienstag\n- Sonntag + 3 Tage = Mittwoch\n- Sonntag + 4 Tage = Donnerstag\n\nDer 24. Dezember 2026 ist also ein Donnerstag.\n\nANTWORT: Donnerstag"
+      },
+      "de_runder_tisch": {
+        "pass": true,
+        "seconds": 22.2,
+        "output": "Um die Anzahl der Möglichkeiten zu berechnen, 8 Personen an einen runden Tisch zu setzen, wobei Drehungen als gleich gelten und Anna und Ben nicht nebeneinander sitzen dürfen, gehen wir in zwei Schritten vor:\n\n**Schritt 1: Gesamtzahl der Anordnungen ohne Einschränkungen**\n\nDie Anzahl der Möglichkeiten, $n$ Personen an einen runden Tisch zu setzen, ist $(n-1)!$.\nHier ist $n = 8$.\nGesamtzahl = $(8-1)! = 7!$\n\n$7! = 5040$\n\n**Schritt 2: Anzahl der Anordnungen, in denen Anna und Ben nebeneinander sitzen**\n\nWir behandeln Anna und Ben als eine einzige Einheit (ein \"Block\").\nDann haben wir effektiv $7$ Einheiten anzuordnen (der Block [Anna, Ben] + die anderen 6 Personen).\nDie Anzahl der Möglichkeiten, diese 7 Einheiten an einen runden Tisch zu setzen, ist $(7-1)! = 6!$.\n\nInnerhalb des Blocks können sich Anna und Ben auf 2 Arten anordnen (Anna links von Ben oder Ben links von Anna).\n\nAlso ist die Anzahl der \"schlechten\" Anordnungen (wo sie nebeneinander sitzen):\n$6! \\times 2$\n\n$6! = 720$\n$720 \\times 2 = 1440$\n\n**Schritt 3: Gültige Anordnungen berechnen**\n\nWir subtrahieren die Anzahl der Anordnungen, in denen sie nebeneinander sitzen, von der Gesamtzahl.\n\nGültige Anordnungen = Gesamtzahl - Anordnungen mit Anna und Ben nebeneinander\nGültige Anordnungen = $5040 - 1440$\nGültige Anordnungen = $3600$\n\nANTWORT: 3600"
+      },
+      "de_luegner": {
+        "pass": true,
+        "seconds": 11.6,
+        "output": "Um das Rätsel zu lösen, analysieren wir die Aussagen Schritt für Schritt unter der gegebenen Prämisse, dass **A ehrlich** ist.\n\n1.  **Analyse von A's Aussage:**\n    A sagt: „B ist ein Lügner.“\n    Da A ehrlich ist, muss seine Aussage wahr sein.\n    Folglich ist **B ein Lügner**.\n\n2.  **Analyse von B's Aussage:**\n    B sagt: „A und C sind vom gleichen Typ.“\n    Da B ein Lügner ist, muss seine Aussage falsch sein.\n    Das bedeutet, dass A und C **nicht** vom gleichen Typ sind.\n\n3.  **Bestimmung von C's Typ:**\n    Wir wissen bereits, dass A ehrlich ist.\n    Da A und C nicht vom gleichen Typ sind, muss C der gegenteilige Typ sein.\n    Folglich ist **C ein Lügner**.\n\nANTWORT: Lügner"
+      },
+      "de_buchstaben_r": {
+        "pass": true,
+        "seconds": 10.4,
+        "output": "Um die Anzahl des Buchstabens 'r' im Wort 'Strohhalmverkäuferin' zu bestimmen, gehen wir das Wort Buchstabe für Buchstabe durch:\n\n1.  S\n2.  t\n3.  **r** (1. Vorkommen)\n4.  o\n5.  h\n6.  h\n7.  a\n8.  l\n9.  m\n10. v\n11. e\n12. **r** (2. Vorkommen)\n13. k\n14. ä\n15. u\n16. f\n17. e\n18. r (3. Vorkommen)\n19. i\n20. n\n\nDer Buchstabe 'r' kommt insgesamt 3 Mal vor.\n\nANTWORT: 3"
+      },
+      "de_rueckwaerts": {
+        "pass": false,
+        "seconds": 12.6,
+        "output": "Um das Wort „Donaudampfschiff“ rückwärts zu schreiben, lesen wir die Buchstaben von hinten nach vorne:\n\n1.  f\n2.  f\n3.  i\n4.  s\n5.  c\n6.  h\n7.  p\n8.  m\n9.  a\n10. d\n11. u\n12. a\n13. n\n14. o\n15. d\n\nZusammengesetzt ergibt das: **ffischpmdauand**\n\nDa die Aufgabe verlangt, das Ergebnis komplett in Kleinbuchstaben zu schreiben, bleibt die Schreibweise gleich (da das Originalwort bereits nur Kleinbuchstaben enthält, abgesehen vom ersten Buchstaben, der hier irrelevant ist, da wir rückwärts schreiben und am Ende klein schreiben sollen).\n\nANTWORT: ffischpmdauand"
+      },
+      "de_grammatik_dativ": {
+        "pass": true,
+        "seconds": 5.7,
+        "output": "Im Deutschen steht das Objekt, dem etwas gegeben wird (hier: der Hund), im Dativ. Das Nomen \"der Hund\" ist maskulin. Die Dativform des bestimmten Artikels \"der\" lautet \"dem\".\n\nANTWORT: dem"
+      },
+      "de_konjunktiv": {
+        "pass": true,
+        "seconds": 11.5,
+        "output": "Um den Satz in die indirekte Rede umzuwandeln, muss das Präsens „habe“ in den Konjunktiv I gesetzt werden. Die 1. Person Singular von „haben“ im Konjunktiv I ist „habe“. Da sich die Person im Nebensatz ändert (von „ich“ zu „er“), bleibt die Form im Konjunktiv I für die 3. Person Singular ebenfalls „habe“ (identisch mit dem Indikativ, was hier akzeptiert ist, da keine Verwechslung mit dem Indikativ „hat“ entsteht).\n\nDer Satz lautet also: Er sagt, dass er keine Zeit habe.\n\nANTWORT: Er sagt, dass er keine Zeit habe."
+      },
+      "de_rechtschreibung": {
+        "pass": true,
+        "seconds": 4.7,
+        "output": "Das Wort \"Standart\" ist falsch geschrieben. Die korrekte Schreibweise lautet \"Standard\". Die anderen Wörter (Rhythmus, Reparatur, Maschine) sind korrekt geschrieben.\n\nANTWORT: Standart"
+      },
+      "de_wissen_magdeburg": {
+        "pass": true,
+        "seconds": 3.3,
+        "output": "Die Landeshauptstadt von Sachsen-Anhalt ist Magdeburg.\n\nANTWORT: Magdeburg"
+      },
+      "en_knowledge_w": {
+        "pass": true,
+        "seconds": 9.9,
+        "output": "The chemical element with the symbol **W** is **Tungsten**.\n\nThe symbol \"W\" is derived from the element's German name, *Wolfram*, which is also the name of the mineral wolframite. This naming convention was adopted to honor the German metallurgist Carl Wilhelm Scheele, who helped discover the element, and to maintain consistency with other elements named after their German or Latin roots (like Sn for Tin/Stannum).\n\nANSWER: Tungsten"
+      },
+      "de_extraktion_termin": {
+        "pass": true,
+        "seconds": 6.2,
+        "output": "{\n  \"name\": \"Yılmaz\",\n  \"kennzeichen\": \"ES-AK 482\",\n  \"datum\": \"2026-11-03\",\n  \"uhrzeit\": \"08:30\",\n  \"telefon\": \"0711 123456\",\n  \"arbeiten\": [\n    \"Inspektion\",\n    \"Bremsbeläge vorne tauschen\"\n  ]\n}"
+      },
+      "code_isbn10": {
+        "pass": true,
+        "seconds": 8.6,
+        "output": "```python\ndef is_valid_isbn10(s: str) -> bool:\n    s = s.replace('-', '')\n    if len(s) != 10:\n        return False\n    for i, ch in enumerate(s):\n        if i < 9:\n            if not ch.isdigit():\n                return False\n        else:\n            if not (ch.isdigit() or ch == 'X'):\n                return False\n    total = 0\n    for i, ch in enumerate(s):\n        if ch == 'X':\n            val = 10\n        else:\n            val = int(ch)\n        total += (10 - i) * val\n    return total % 11 == 0\n```"
+      },
+      "code_spiral": {
+        "pass": true,
+        "seconds": 11.1,
+        "output": "```python\ndef spiral_order(matrix):\n    if not matrix or not matrix[0]:\n        return []\n    \n    result = []\n    top, bottom = 0, len(matrix) - 1\n    left, right = 0, len(matrix[0]) - 1\n    \n    while top <= bottom and left <= right:\n        # Traverse right\n        for i in range(left, right + 1):\n            result.append(matrix[top][i])\n        top += 1\n        \n        # Traverse down\n        for i in range(top, bottom + 1):\n            result.append(matrix[i][right])\n        right -= 1\n        \n        # Traverse left\n        if top <= bottom:\n            for i in range(right, left - 1, -1):\n                result.append(matrix[bottom][i])\n            bottom -= 1\n        \n        # Traverse up\n        if left <= right:\n            for i in range(bottom, top - 1, -1):\n                result.append(matrix[i][left])\n            left += 1\n    \n    return result\n```"
+      },
+      "code_bugfix": {
+        "pass": true,
+        "seconds": 6.5,
+        "output": "```python\ndef find_first(nums, target):\n    \"\"\"Return the index of the first occurrence of target in sorted nums, or -1.\"\"\"\n    lo, hi = 0, len(nums)\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if nums[mid] < target:\n            lo = mid + 1\n        else:\n            hi = mid\n    return lo if lo < len(nums) and nums[lo] == target else -1\n```"
+      },
+      "de_anweisung_liste": {
+        "pass": true,
+        "seconds": 3.6,
+        "output": "1. Apfel\n2. Banane\n3. Birne\n4. Erdbeere\n5. Kiwi"
+      },
+      "de_anweisung_json_woerter": {
+        "pass": true,
+        "seconds": 4.0,
+        "output": "[\n  \"Bärin\",\n  \"Bügel\",\n  \"Bogen\",\n  \"Basis\"\n]"
+      },
+      "de_langtext_zwei_fakten": {
+        "pass": true,
+        "seconds": 15.3,
+        "output": "Um die Gesamtzahl der Schrauben zu berechnen, die Lieferant A und Lieferant B zusammen in 3 Wochen liefern, gehen wir wie folgt vor:\n\n1.  **Liefermenge Lieferant A:**\n    Lieferant A liefert 120 Schrauben pro Woche.\n    In 3 Wochen liefert er: $120 \\times 3 = 360$ Schrauben.\n\n2.  **Liefermenge Lieferant B:**\n    Lieferant B liefert 85 Schrauben pro Woche.\n    In 3 Wochen liefert er: $85 \\times 3 = 255$ Schrauben.\n\n3.  **Gesamtmenge:**\n    Zusammen liefern beide: $360 + 255 = 615$ Schrauben.\n\nAlternativ kann man auch die wöchentliche Gesamtmenge berechnen und diese mit 3 multiplizieren:\n$(120 + 85) \\times 3 = 205 \\times 3 = 615$.\n\nANTWORT: 615"
+      }
+    }
+  },
+  {
+    "model": "qwen3.5:9b",
+    "think": false,
+    "load_s": 5.7,
+    "size_gb": 5.7,
+    "gpu_pct": 100,
+    "gen_tps": 118.2,
+    "prompt_tps": 5652,
+    "score": 17,
+    "total": 20,
+    "task_seconds": 72.8,
+    "tasks": {
+      "de_prozent_fahrrad": {
+        "pass": true,
+        "seconds": 4.4,
+        "output": "Um den Endpreis des Fahrrades zu berechnen, gehen wir schrittweise vor:\n\n1.  **Preisnachhaltung um 15 %:**\n    Der ursprüngliche Preis beträgt 840 €.\n    Die Erhöhung beträgt $15\\%$ von 840 €:\n    $$0,15 \\times 840 = 126 \\text{ €}$$\n    Der neue Preis nach der Erhöhung ist:\n    $$840 + 126 = 966 \\text{ €}$$\n\n2.  **Preissenkung um 15 %:**\n    Nun wird der neue Preis von 966 € um $15\\%$ gesenkt.\n    Die Senkung beträgt $15\\%$ von 966 €:\n    $$0,15 \\times 966 = 144,9 \\text{ €}$$\n    Der Endpreis nach der Senkung ist:\n    $$966 - 144,9 = 821,1 \\text{ €}$$\n\nDas Fahrrad kostet danach 821,10 €.\n\nANTWORT: 821,10"
+      },
+      "de_zinseszins": {
+        "pass": true,
+        "seconds": 4.3,
+        "output": "Um den Endbetrag zu berechnen, verwenden wir die Formel für Zinseszins:\n\n$$K = K_0 \\cdot (1 + p)^t$$\n\nDabei sind:\n*   $K_0$ der Anfangskapitalbetrag ($2.000\\,\\text{€}$)\n*   $p$ der jährliche Zinssatz als Dezimalzahl ($3\\,\\% = 0,03$)\n*   $t$ die Anzahl der Jahre ($4$)\n\nDie Berechnung verläuft wie folgt:\n1.  Faktor pro Jahr: $1 + 0,03 = 1,03$\n2.  Aufzinsungsfaktor für 4 Jahre: $(1,03)^4 \\approx 1,12550881$\n3.  Endkapital: $2.000 \\cdot 1,12550881 = 2.251,01762\\,\\text{€}$\n\nAuf zwei Nachkommastellen gerundet ergibt dies $2.251,02\\,\\text{€}$.\n\nANTWORT: 2251,02"
+      },
+      "en_pipes": {
+        "pass": true,
+        "seconds": 7.1,
+        "output": "multaneously.\n\n**Step 1: Determine the individual rates of each pipe.**\nLet the total capacity of the tank be $1$ unit.\n*   **Pipe A (Filling):** Fills the tank in 6 hours.\n    Rate of A = $\\frac{1}{6}$ tank/hour.\n*   **Pipe B (Filling):** Fills the tank in 4 hours.\n    Rate of B = $\\frac{1}{4}$ tank/hour.\n*   **Drain C (Emptying):** Empties the tank in 12 hours. Since it removes water, its rate is negative.\n    Rate of C = $-\\frac{1}{12}$ tank/hour.\n\n**Step 2: Calculate the combined net rate.**\nWhen all three are open, we sum their individual rates:\n$$ \\text{Net Rate} = \\text{Rate}_A + \\text{Rate}_B + \\text{Rate}_C $$\n$$ \\text{Net Rate} = \\frac{1}{6} + \\frac{1}{4} - \\frac{1}{12} $$\n\nTo add these fractions, we find the least common multiple (LCM) of the denominators 6, 4, and 12, which is 12.\n*   Convert $\\frac{1}{6}$: $\\frac{1 \\times 2}{6 \\times 2} = \\frac{2}{12}$\n*   Convert $\\frac{1}{4}$: $\\frac{1 \\times 3}{4 \\times 3} = \\frac{3}{12}$\n*   Keep $-\\frac{1}{12}$ as is.\n\nNow, add them together:\n$$ \\text{Net Rate} = \\frac{2}{12} + \\frac{3}{12} - \\frac{1}{12} $$\n$$ \\text{Net Rate} = \\frac{2 + 3 - 1}{12} $$\n$$ \\text{Net Rate} = \\frac{4}{12} $$\n\nSimplify the fraction:\n$$ \\text{Net Rate} = \\frac{1}{3} \\text{ tank/hour} $$\n\n**Step 3: Calculate the time required to fill the tank.**\nThe time ($T$) required is the reciprocal of the net rate:\n$$ T = \\frac{\\text{Total Work}}{\\text{Net Rate}} = \\frac{1}{\\frac{1}{3}} = 3 \\text{ hours} $$\n\nIt takes 3 hours to fill the empty tank.\n\nANSWER: 3"
+      },
+      "de_wochentag": {
+        "pass": false,
+        "seconds": 7.1,
+        "output": "Um den Wochentag des 24. Dezembers 2026 zu bestimmen, gehen wir schrittweise vor:\n\n1.  **Ausgangspunkt:** Der 1. März 2026 ist ein Sonntag.\n2.  **Tage bis zum Jahresende zählen:**\n    *   März hat 31 Tage. Von März 1 bis März 31 sind es 30 Tage nach dem Startdatum (da der 1. März Tag 0 ist).\n        *   30 Tage = 4 Wochen + 2 Tage. Sonntag + 2 Tage = Dienstag (Ende des März).\n    *   April: 30 Tage (+30 % 2) = Donnerstag.\n    *   Mai: 31 Tage (+31 % 4) = Samstag.\n    *   Juni: 30 Tage (+30 % 2) = Montag.\n    *   Juli: 31 Tage (+31 % 4) = Mittwoch.\n    *   August: 31 Tage (+31 % 4) = Freitag.\n    *   September: 30 Tage (+30 % 2) = Sonntag.\n    *   Oktober: 31 Tage (+31 % 4) = Dienstag.\n    *   November: 30 Tage (+30 % 2) = Donnerstag.\n    *   Dezember bis zum 24.: Wir zählen die Tage vom 1. Dezember bis zum 24. Dezember. Das sind 23 Tage nach dem 1. Dezember.\n        *   Vom 1. Dezember (Donnerstag) plus 23 Tage:\n        *   23 geteilt durch 7 ergibt 3 Wochen und einen Rest von 2 Tagen.\n        *   Donnerstag + 2 Tage = Samstag.\n\nAlternativ über die Gesamtzahl der Tage vom 1. März bis zum 24. Dezember:\n*   März (ab dem 2.): 30\n*   April: 30\n*   Mai: 31\n*   Juni: 30\n*   Juli: 31\n*   August: 31\n*   September: 30\n*   Oktober: 31\n*   November: 30\n*   Dezember (bis 24.): 24\n*   Summe: 30+30+31+30+31+31+30+31+30+24 = 298 Tage.\n*   298 geteilt durch 7 ergibt einen Rest von 6 (da 298 = 42 * 7 + 6).\n*   Sonntag + 6 Tage = Samstag.\n\nANTWORT: Samstag"
+      },
+      "de_runder_tisch": {
+        "pass": true,
+        "seconds": 5.1,
+        "output": "Um die Anzahl der Möglichkeiten zu berechnen, 8 Personen an einem runden Tisch so zu setzen, dass Anna und Ben nicht nebeneinander sitzen, gehen wir wie folgt vor:\n\n1.  **Gesamtanzahl der Anordnungen ohne Einschränkung:**\n    Bei einer kreisförmigen Anordnung von $n$ Personen gilt die Formel $(n-1)!$.\n    Hier ist $n = 8$.\n    Gesamtanzahl = $(8-1)! = 7! = 5040$.\n\n2.  **Anzahl der Anordnungen, bei denen Anna und Ben *nebeneinander* sitzen:**\n    Wir betrachten Anna und Ben als eine feste Einheit (ein \"Block\"). Zusammen mit den anderen 6 Personen haben wir dann effektiv $7$ Einheiten zu anordnen ($AB$ plus die 6 anderen).\n    Die Anzahl der kreisförmigen Anordnungen dieser 7 Einheiten ist $(7-1)! = 6!$.\n    Innerhalb des Blocks \"Anna-Ben\" können sie jedoch auf 2 Arten sitzen (Anna links von Ben oder Ben links von Anna).\n    Also: $6! \\times 2 = 720 \\times 2 = 1440$.\n\n3.  **Anzahl der Anordnungen, bei denen Anna und Ben *nicht* nebeneinander sitzen:**\n    Wir ziehen die ungünstigen Fälle (nebeneinander) von den Gesamtfällen ab.\n    $5040 - 1440 = 3600$.\n\nEs gibt also 3600 mögliche Sitzordnungen.\n\nANTWORT: 3600"
+      },
+      "de_luegner": {
+        "pass": true,
+        "seconds": 3.4,
+        "output": "Da A ehrlich ist, stimmt seine Aussage \"B ist ein Lügner\". Das bedeutet, B liegt tatsächlich immer.\n\nNun betrachten wir die Aussage von B: \"A und C sind vom gleichen Typ.\" Da B ein Lügner ist, muss diese Aussage falsch sein.\nDie Aussage \"A und C sind vom gleichen Typ\" ist genau dann falsch, wenn A und C unterschiedliche Typen haben (einer ehrlich, der andere lügt).\n\nWir wissen bereits, dass A ehrlich ist. Damit die Aussage von B falsch wird, muss C den anderen Typ haben als A.\nDa A ehrlich ist, muss C ein Lügner sein.\n\nANTWORT: C ist ein Lügner"
+      },
+      "de_buchstaben_r": {
+        "pass": true,
+        "seconds": 3.4,
+        "output": "Um die Anzahl des Buchstabens 'r' im Wort „Strohhalmverkäuferin\" zu zählen, gehen wir das Wort Schritt für Schritt durch:\n\n1. S\n2. t\n3. **r** (1)\n4. o\n5. h\n6. h\n7. a\n8. l\n9. m\n10. v\n11. e\n12. r (2)\n13. k\n14. ä\n15. u\n16. f\n17. e\n18. r (3)\n19. i\n20. n\n\nDer Buchstabe 'r' kommt dreimal vor.\n\nANTWORT: 3"
+      },
+      "de_rueckwaerts": {
+        "pass": false,
+        "seconds": 2.4,
+        "output": "ffihsspmadnauDnoA\n\nANTWORT: fffihsspmadnauDnoA"
+      },
+      "de_grammatik_dativ": {
+        "pass": true,
+        "seconds": 2.2,
+        "output": "dem\nANTWORT: dem"
+      },
+      "de_konjunktiv": {
+        "pass": true,
+        "seconds": 2.4,
+        "output": "Er sagt, er habe keine Zeit.\nANTWORT: Er sagt, er habe keine Zeit."
+      },
+      "de_rechtschreibung": {
+        "pass": true,
+        "seconds": 2.2,
+        "output": "Standart\nANTWORT: Standart"
+      },
+      "de_wissen_magdeburg": {
+        "pass": true,
+        "seconds": 2.6,
+        "output": "Die Landeshauptstadt des deutschen Bundeslandes Sachsen-Anhalt ist Magdeburg. Die Stadt wurde im Jahr 2002 offiziell zur Hauptstadt ernannt und löste damit Halle (Saale) ab, die bis dahin diese Funktion innehatte.\n\nANTWORT: Magdeburg"
+      },
+      "en_knowledge_w": {
+        "pass": true,
+        "seconds": 3.0,
+        "output": "The chemical element with the symbol **W** is **Tungsten**. Its name comes from the German word *Wolfram*, which was historically used to describe the ore (tungstate) rather than the pure metal itself. The symbol W is derived from this historical name, while the English name \"tungsten\" comes from Swedish and Norwegian terms meaning \"heavy stone.\" Tungsten has the atomic number 74 and is known for having the highest melting point of all metals.\n\nANSWER: Tungsten"
+      },
+      "de_extraktion_termin": {
+        "pass": true,
+        "seconds": 3.0,
+        "output": "{\n  \"name\": \"Yılmaz\",\n  \"kennzeichen\": \"ES-AK 482\",\n  \"datum\": \"2026-11-03\",\n  \"uhrzeit\": \"08:30\",\n  \"telefon\": \"0711 123456\",\n  \"arbeiten\": [\n    \"Inspektion\",\n    \"Tausch der Bremsbeläge vorne\"\n  ]\n}"
+      },
+      "code_isbn10": {
+        "pass": true,
+        "seconds": 3.6,
+        "output": "```python\ndef is_valid_isbn10(s: str) -> bool:\n    # Remove hyphens\n    cleaned = s.replace('-', '')\n    \n    # Check length after removing hyphens\n    if len(cleaned) != 10:\n        return False\n    \n    # Validate characters and convert to numeric values\n    digits = []\n    for char in cleaned:\n        if char.isdigit():\n            digits.append(int(char))\n        elif char == 'X':\n            digits.append(10)\n        else:\n            return False  # Invalid character found\n    \n    # Calculate the weighted sum\n    total = sum((10 - i) * digit for i, digit in enumerate(digits))\n    \n    # Check divisibility by 11\n    return total % 11 == 0\n```"
+      },
+      "code_spiral": {
+        "pass": true,
+        "seconds": 4.4,
+        "output": "```python\ndef spiral_order(matrix):\n    if not matrix or not matrix[0]:\n        return []\n    \n    left, right = 0, len(matrix[0]) - 1\n    top, bottom = 0, len(matrix) - 1\n    result = []\n    \n    while left <= right and top <= bottom:\n        # Traverse from left to right along the top row\n        for col in range(left, right + 1):\n            result.append(matrix[top][col])\n        top += 1\n        \n        # Traverse from top to bottom along the right column\n        for row in range(top, bottom + 1):\n            result.append(matrix[row][right])\n        right -= 1\n        \n        # Check if there is still a valid row to traverse (left to right)\n        if top <= bottom:\n            for col in range(right, left - 1, -1):\n                result.append(matrix[bottom][col])\n            bottom -= 1\n            \n        # Check if there is still a valid column to traverse (top to bottom)\n        if left <= right:\n            for row in range(bottom, top - 1, -1):\n                result.append(matrix[row][left])\n            left += 1\n            \n    return result\n```"
+      },
+      "code_bugfix": {
+        "pass": true,
+        "seconds": 3.2,
+        "output": "```python\ndef find_first(nums, target):\n    \"\"\"Return the index of the first occurrence of target in sorted nums, or -1.\"\"\"\n    lo, hi = 0, len(nums) - 1\n    result = -1\n    while lo <= hi:\n        mid = (lo + hi) // 2\n        if nums[mid] == target:\n            result = mid\n            hi = mid - 1\n        elif nums[mid] < target:\n            lo = mid + 1\n        else:\n            hi = mid - 1\n    return result\n```"
+      },
+      "de_anweisung_liste": {
+        "pass": true,
+        "seconds": 2.3,
+        "output": "1. Apfel\n2. Birne\n3. Erdbeere\n4. Kirsche\n5. Orange"
+      },
+      "de_anweisung_json_woerter": {
+        "pass": false,
+        "seconds": 2.3,
+        "output": "[\"Bär\", \"Bach\", \"Band\", \"Bart\"]"
+      },
+      "de_langtext_zwei_fakten": {
+        "pass": true,
+        "seconds": 4.5,
+        "output": "Um die Gesamtzahl der Schrauben zu berechnen, müssen wir zunächst die wöchentliche Lieferung beider Lieferanten ermitteln und diese dann auf einen Zeitraum von drei Wochen anwenden.\n\n1.  **Lieferung von Lieferant A:** Der Text gibt an, dass Lieferant A jede Woche 120 Schrauben liefert.\n    *   Wöchentlich: 120 Schrauben\n    *   In 3 Wochen: $120 \\times 3 = 360$ Schrauben\n\n2.  **Lieferung von Lieferant B:** Der Text gibt an, dass Lieferant B jede Woche 85 Schrauben liefert.\n    *   Wöchentlich: 85 Schrauben\n    *   In 3 Wochen: $85 \\times 3 = 255$ Schrauben\n\n3.  **Gesamtsumme:** Wir addieren die Mengen beider Lieferanten für den Zeitraum von drei Wochen.\n    *   Gesamt: $360 + 255 = 615$ Schrauben\n\nANTWORT: 615"
+      }
+    }
+  }
+]

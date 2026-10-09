@@ -317,9 +317,9 @@ TASKS_EXTRA = [
     ("de_rueckwaerts", "Schreibe das Wort 'Donaudampfschiff' rückwärts, komplett in Kleinbuchstaben."
      + ANS, word_grader("ffihcsfpmaduanod")),
     ("de_grammatik_dativ", "Setze das richtige Wort ein: 'Ich gebe ___ (der Hund) einen Knochen.' "
-     "Gib nur die eingesetzten Wörter an." + ANS, word_grader("dem hund")),
+     "Gib nur die eingesetzten Wörter an." + ANS, word_grader("dem", reject=("den ", "der "))),
     ("de_konjunktiv", "Wandle in indirekte Rede mit Konjunktiv I um: Er sagt: 'Ich habe keine Zeit.'"
-     + ANS, word_grader("er habe keine zeit")),
+     + ANS, word_grader("er habe keine zeit", "er keine zeit habe")),
     ("de_rechtschreibung", "Welches dieser Wörter ist falsch geschrieben: Rhythmus, Standart, "
      "Reparatur, Maschine? Gib nur das falsche Wort an." + ANS, word_grader("standart")),
     ("de_wissen_magdeburg", "Wie heißt die Landeshauptstadt von Sachsen-Anhalt?" + ANS,
@@ -366,7 +366,7 @@ SPEED_PROMPT = ("Schreibe einen ausführlichen Aufsatz (etwa 400 Wörter) über 
 
 # ---------------------------------------------------------------- runner
 
-def bench_model(model, think, tasks):
+def bench_model(model, think, task_list):
     print(f"\n=== {model} (think={think})", flush=True)
     unload(model)
     t0 = time.time()
@@ -386,7 +386,7 @@ def bench_model(model, think, tasks):
     print(f"  gen {gen_tps:.1f} tok/s, prompt {pps:.0f} tok/s", flush=True)
 
     tasks, passed, task_time = {}, 0, 0.0
-    for name, prompt, grader in tasks:
+    for name, prompt, grader in task_list:
         t = time.time()
         try:
             text, _ = chat(model, prompt, think=think, num_predict=4096 if think else 1536)
@@ -403,7 +403,7 @@ def bench_model(model, think, tasks):
     return {"model": model, "think": think, "load_s": round(load_s, 1),
             "size_gb": round(size / 1e9, 1), "gpu_pct": gpu_pct,
             "gen_tps": round(gen_tps, 1), "prompt_tps": round(pps),
-            "score": passed, "total": len(tasks), "task_seconds": round(task_time, 1),
+            "score": passed, "total": len(task_list), "task_seconds": round(task_time, 1),
             "tasks": tasks}
 
 
