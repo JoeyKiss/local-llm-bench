@@ -1,3 +1,10 @@
 __pycache__/
 *.pyc
 .venv/
+venv/
+.env
+.env.*
+*.log
+.vscode/
+.idea/
+.claude/settings.local.json
