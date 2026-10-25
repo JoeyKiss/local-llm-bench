@@ -10,3 +10,4 @@ venv/
 .claude/settings.local.json
 CLAUDE.md
 .claude/
+IMPROVEMENTS.md
