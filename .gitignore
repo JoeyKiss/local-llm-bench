@@ -8,3 +8,5 @@ venv/
 .vscode/
 .idea/
 .claude/settings.local.json
+CLAUDE.md
+.claude/
